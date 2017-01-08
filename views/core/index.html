@@ -1,0 +1,32 @@
+<html ng-app="giftzApp">
+<title>Welcome to Giftszopedia</title>
+<head>   </head>
+<!--CSS Files to be load.-->
+<link rel="stylesheet" type="text/css" href="/bower_components/bootstrap/dist/css/bootstrap-theme.css">
+<link rel="stylesheet" type="text/css" href="/bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
+<link rel="stylesheet" type="text/css" href="/bower_components/bootstrap/dist/css/bootstrap.css">
+<!--Javascript files to be loaded.-->
+<script src="/bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/angular/angular.min.js"></script>
+<script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="/views/core/index.js"></script>
+<script src="/views/core/navbar/directive.navbar.ang.js"></script>
+<script src="/views/core/navbar/controller.navbar.ang.js"></script>
+<script src="/views/core/navbar/service.navbar.ang.js"></script>
+
+<body>
+<div ng-controller="HeaderController">
+    <core-Navbar></core-Navbar>
+</div>
+<div class="container">
+
+    <div class="starter-template">
+        <h1>Bootstrap starter template</h1>
+        <p class="lead">Use this document as a wayheader to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
+    </div>
+
+</div><!-- /.container -->
+
+</body>
+
+</html>
