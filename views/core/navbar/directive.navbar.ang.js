@@ -1,14 +1,13 @@
-var app = angular.module('giftzApp');
+var app = angular.module('giftzApp'); controller: 'HeaderController',
 
 app.directive('coreNavbar', function () {
-    console.log("Inside Directive");
     var directiveDefinitionObject = {
         priority: 0,
         templateUrl: 'views/core/navbar/navbar.component.html',
         restrict: 'AE',
         //templateNamespace: 'html',
       //  scope: false,
-        controller: 'HeaderController',
+
        // controllerAs: 'header',
         //  bindToController: true,
         // require: 'siblingDirectiveName', // or // ['^parentDirectiveName', '?optionalDirectiveName', '?^optionalParent'],

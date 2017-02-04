@@ -1,53 +1,64 @@
-<nav  class="navbar navbar-default">
-    <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">Brand</a>
+<div ng-controller="HeaderController as ctrl" layout="column" >
+
+    <md-toolbar>
+
+        <div class="md-toolbar-tools">
+            <div flex="20" >
+            <md-button class="md-fab md-mini" aria-label="Favorite">
+                <md-icon md-svg-icon="img/icons/favorite.svg"></md-icon>
+            </md-button>
+            <span>Giftzopedia</span>
+            </div>
+<div flex="50" flex layout-margin layout-fill >
+
+    <form ng-submit="$event.preventDefault()">
+        <md-content>
+        <md-autocomplete
+                ng-disabled="ctrl.isDisabled"
+                md-no-cache="ctrl.noCache"
+                md-selected-item="ctrl.selectedItem"
+                md-search-text-change="ctrl.searchTextChange(ctrl.searchText)"
+                md-search-text="ctrl.searchText"
+                md-selected-item-change="ctrl.selectedItemChange(item)"
+                md-items="item in ctrl.querySearch(ctrl.searchText)"
+                md-item-text="item.display"
+                md-min-length="0"
+                placeholder="What is your favorite US state?">
+            <md-item-template>
+                <span md-highlight-text="ctrl.searchText" md-highlight-flags="^i">{{item.display}}</span>
+            </md-item-template>
+            <md-not-found>
+                No states matching "{{ctrl.searchText}}" were found.
+                <a ng-click="ctrl.newState(ctrl.searchText)">Create a new one!</a>
+            </md-not-found>
+        </md-autocomplete>
+        </md-content>
+
+    </form>
+</div>
+
+            <!-- fill up the space between left and right area -->
+
+                <div flex="20">
+ <md-button class="md-warn md-raised" ng-click="showAdvanced($event)">
+        Login
+    </md-button>
+                </div>
+                <div flex="20">
+    <md-button class="md-warn md-raised" ng-click="showSignUp($event)">
+        Sign-Up
+    </md-button>
+                </div>
+            <div flex="20">
+                <md-button class="md-warn md-raised" ng-click="showAdvanced($event)">
+                   In Cart
+                </md-button>
+            </div>
+        </div>
+    </md-toolbar>
+
         </div>
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-                <li><a href="#">Link</a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li ng-repeat=" main in categoriesList"><a href="#" >{{main.maincategoryName}}</a></li>
-                        <li><a href="#">Another action</a></li>
-                        <li><a href="#">Something else here</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a href="#">Separated link</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a href="#">One more separated link</a></li>
-                    </ul>
-                </li>
-            </ul>
-            <form class="navbar-form navbar-left">
-                <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Search">
-                </div>
-                <button type="submit" class="btn btn-default">Submit</button>
-            </form>
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="#">Link</a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Action</a></li>
-                        <li><a href="#">Another action</a></li>
-                        <li><a href="#">Something else here</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a href="#">Separated link</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
-</nav>
+
+</div>
+

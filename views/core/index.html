@@ -5,28 +5,95 @@
 <link rel="stylesheet" type="text/css" href="/bower_components/bootstrap/dist/css/bootstrap-theme.css">
 <link rel="stylesheet" type="text/css" href="/bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
 <link rel="stylesheet" type="text/css" href="/bower_components/bootstrap/dist/css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="/bower_components/angular-material/angular-material.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 <!--Javascript files to be loaded.-->
 <script src="/bower_components/jquery/dist/jquery.js"></script>
-<script src="bower_components/angular/angular.min.js"></script>
+<script src="/bower_components/angular/angular.min.js"></script>
+<script src="/bower_components/angular-cookies/angular-cookies.js"></script>
 <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="/bower_components/angular-animate/angular-animate.js"></script>
+<script src="/bower_components/angular-aria/angular-aria.js"></script>
+<script src="/bower_components/angular-messages/angular-messages.js"></script>
+<script src="/bower_components/angular-material/angular-material.js"></script>
 <script src="/views/core/index.js"></script>
+<!--navbar Realted Js-->
 <script src="/views/core/navbar/directive.navbar.ang.js"></script>
 <script src="/views/core/navbar/controller.navbar.ang.js"></script>
 <script src="/views/core/navbar/service.navbar.ang.js"></script>
+<!--Login Page Related Js-->
 
+<!--Registration Page Related Js-->
+<script src="/views/core/userregistration/controller.userregistration.ang.js"></script>
+<script src="/views/core/userregistration/directive.useregistration.js"></script>
 <body>
-<div ng-controller="HeaderController">
-    <core-Navbar></core-Navbar>
-</div>
-<div class="container">
+<div layout="column" >
+    <div flex="20">
+        <core-Navbar></core-Navbar>
 
-    <div class="starter-template">
-        <h1>Bootstrap starter template</h1>
-        <p class="lead">Use this document as a wayheader to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
     </div>
+    <div flex="60">
+        <div layout="column">
+            <div flex="60">
+                <image-slider-comp></image-slider-comp>
+                <md-content>
+                    <md-card>
+                        <img style="width: auto; height: 50% " ng-src="/views/core/imageslider/4a18ffbe8c18edadb754af13d68b61d9 - Copy.jpg" class="md-card-image" alt="image caption">
+                    </md-card>
 
-</div><!-- /.container -->
 
+
+                </md-content>
+            </div>
+            <div flex="80" layout-margin>
+                <div layout="row">
+                    <div flex="20">
+                        <image-slider-comp></image-slider-comp>
+                        <md-content>
+                            <md-card>
+                                <img style="width: auto; height: 50% " ng-src="/views/core/imageslider/4a18ffbe8c18edadb754af13d68b61d9 - Copy.jpg" class="md-card-image" alt="image caption">
+                            </md-card>
+                        </md-content>
+                    </div>
+                    <div flex="20">
+                        <image-slider-comp></image-slider-comp>
+                        <md-content>
+                            <md-card>
+                                <img style="width: auto; height: 50% " ng-src="/views/core/imageslider/4a18ffbe8c18edadb754af13d68b61d9 - Copy.jpg" class="md-card-image" alt="image caption">
+                            </md-card>
+                        </md-content>
+                    </div>
+                    <div flex="20">
+                        <image-slider-comp></image-slider-comp>
+                        <md-content>
+                            <md-card>
+                                <img style="width: auto; height: 50% " ng-src="/views/core/imageslider/4a18ffbe8c18edadb754af13d68b61d9 - Copy.jpg" class="md-card-image" alt="image caption">
+                            </md-card>
+                        </md-content>
+                    </div>
+                    <div flex="20">
+                        <image-slider-comp></image-slider-comp>
+                        <md-content>
+                            <md-card>
+                                <img style="width: auto; height: 50% " ng-src="/views/core/imageslider/4a18ffbe8c18edadb754af13d68b61d9 - Copy.jpg" class="md-card-image" alt="image caption">
+                            </md-card>
+                        </md-content>
+                    </div>
+                    <div flex="20">
+                        <image-slider-comp></image-slider-comp>
+                        <md-content>
+                            <md-card>
+                                <img style="width: auto; height: 50% " ng-src="/views/core/imageslider/4a18ffbe8c18edadb754af13d68b61d9 - Copy.jpg" class="md-card-image" alt="image caption">
+                            </md-card>
+                        </md-content>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
 </body>
 
 </html>

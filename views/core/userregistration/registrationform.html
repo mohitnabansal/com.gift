@@ -1,0 +1,76 @@
+<div layout="column"  style="overflow: auto;">
+<div ng-controller="userRegCtrl as ctrl" >
+
+    <md-content>
+        <md-card>
+            <md-toolbar>
+                <div class="md-toolbar-tools">
+                    <h2><span>Login Form</span></h2>
+                </div>
+            </md-toolbar>
+            <md-card-content>
+                <form action="/register" method="post" name="registrationForm">
+                    <md-input-container>
+                        <label>Name</label>
+                        <input type="text" name="yourname"  ng-model="yourname" placeholder="Your Name" required=""/>
+                        <div ng-messages="registrationForm.$error.yourname" role="alert" multiple="">
+                            <div ng-message="required" class="my-message">Please enter your Your Name.</div>
+                        </div>
+                    </md-input-container>
+                    <md-input-container>
+                        <label>Surname</label>
+                        <input type="text" name="surname"  ng-model="surname" placeholder="Your Surname" required=""/>
+                        <div ng-messages="registrationForm.$error.surname" role="alert" multiple="">
+                            <div ng-message="required" class="my-message">Please enter your Your Name.</div>
+                        </div>
+                    </md-input-container>
+                    <md-input-container>
+                        <label>Date of Birth</label>
+                        <md-datepicker  ng-model="dateofbirth" name="dateofbirth"  type="text" md-placeholder="Enter date"></md-datepicker>
+                        <input type="hidden"  name="textdateofbirth" value={{ctrl.dateofbirth}}>
+                        <div ng-messages="registrationForm.$error.dateofbirth" role="alert" multiple="">
+                            <div ng-message="required" class="my-message">Please enter your Your Name.</div>
+                        </div>
+                    </md-input-container>
+                    <md-input-container >
+                        <label>Email ID</label>
+                        <input type="text" name="emailid"  ng-model="emailid" placeholder="Your Surname" required=""/>
+                        <div ng-messages="registrationForm.$error.emailid" role="alert" multiple="">
+                            <div ng-message="required" class="my-message">Please enter your Your Name.</div>
+                        </div>
+                    </md-input-container>
+                    <md-input-container>
+                        <label>User Name</label>
+                        <input type="text" name="username"  ng-model="username" placeholder="Enter your User Name" required=""/>
+                        <div ng-messages="registrationForm.$error.username" role="alert" multiple="">
+                            <div ng-message="required" class="my-message">Please enter your Your Name.</div>
+                        </div>
+                    </md-input-container>
+                    <md-input-container >
+                        <label>Password</label>
+                        <input type="text" name="otherModelValue"  ng-model="otherModelValue" placeholder="Username/EmailId" required=""/>
+                        <div ng-messages="registrationForm.$error.compareTo" role="alert" multiple="">
+                            <div ng-message="required" class="my-message">Please enter your email.</div>
+                        </div>
+                    </md-input-container>
+                    <md-input-container >
+                        <label>Confirm password</label>
+                        <input type="text" name="password"  ng-model="password"  compare-to="otherModelValue" placeholder="Username/EmailId" required=""/>
+                        <div ng-messages="registrationForm.$error.compareTo" role="alert" multiple="">
+                            <div ng-message="required" class="my-message">Please enter your email.</div>
+                        </div>
+                    </md-input-container>
+                    <div flex="20">
+                        <md-button type="submit" class="md-warn md-raised" ng-submit>
+                            Sign-Up
+                        </md-button>
+                    </div>
+                </form>
+
+            </md-card-content>
+        </md-card>
+    </md-content>
+    <!-- Angular Material Dependencies-->
+
+</div>
+</div>
