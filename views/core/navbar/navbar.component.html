@@ -1,15 +1,17 @@
-<div ng-controller="HeaderController as ctrl" layout="column" >
+<div ng-controller="HeaderController as ctrl" >
+
 
     <md-toolbar>
 
         <div class="md-toolbar-tools">
-            <div flex="20" >
-            <md-button class="md-fab md-mini" aria-label="Favorite">
-                <md-icon md-svg-icon="img/icons/favorite.svg"></md-icon>
+            <div ng-controller="productlistController as prdCtrl" flex="15" >
+            <md-button  ng-click="prdCtrl.openSide()" class="md-fab md-mini" aria-label="Favorite">
+                <md-icon md-svg-icon="/bower_components/material-design-icons/action/svg/design/ic_list_24px.svg"></md-icon>
             </md-button>
+
             <span>Giftzopedia</span>
             </div>
-<div flex="50" flex layout-margin layout-fill >
+<div flex="60" flex layout-margin layout-fill >
 
     <form ng-submit="$event.preventDefault()">
         <md-content>
@@ -39,26 +41,27 @@
 
             <!-- fill up the space between left and right area -->
 
-                <div flex="20">
+                <div flex="10">
  <md-button class="md-warn md-raised" ng-click="showAdvanced($event)">
         Login
     </md-button>
                 </div>
-                <div flex="20">
+                <div flex="10">
     <md-button class="md-warn md-raised" ng-click="showSignUp($event)">
         Sign-Up
     </md-button>
                 </div>
-            <div flex="20">
+            <div flex="10">
                 <md-button class="md-warn md-raised" ng-click="showAdvanced($event)">
                    In Cart
                 </md-button>
             </div>
         </div>
+
     </md-toolbar>
 
         </div>
 
-
+<product-listnav></product-listnav>
 </div>
 

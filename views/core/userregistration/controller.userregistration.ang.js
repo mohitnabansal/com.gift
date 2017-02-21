@@ -1,14 +1,16 @@
 var app = angular.module("giftzApp");
 
-app.controller('userRegCtrl',['$scope','$cookies',userRegCtrl]);
+app.controller('userRegCtrl',['$scope','registrationService','$cookies',function($scope,registrationService,$cookies) {userRegCtrl}]);
 
-function userRegCtrl($scope,$cookies){
+function userRegCtrl($scope,$cookies,registrationService){
     var dataModel = this;
     dataModel.dateofbirth ="";
-console.log(this)
     $scope.$watch('dateofbirth', function (date)
     {
-        dataModel.dateofbirth =date;
+        dataModel.dateofbirth = date;
     });
-
+    $scope.submitForm = function(){
+        console.log(this.user);;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+        registrationService.registrationPost(this.user)
+    }
 }

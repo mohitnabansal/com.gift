@@ -6,9 +6,11 @@
 <link rel="stylesheet" type="text/css" href="/bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
 <link rel="stylesheet" type="text/css" href="/bower_components/bootstrap/dist/css/bootstrap.css">
 <link rel="stylesheet" type="text/css" href="/bower_components/angular-material/angular-material.css">
+<link rel="stylesheet" type="text/css" href="/views/common/css/imageSlider.css">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-<!--Javascript files to be loaded.-->
+
+<!-- files to be loaded.-->
 <script src="/bower_components/jquery/dist/jquery.js"></script>
 <script src="/bower_components/angular/angular.min.js"></script>
 <script src="/bower_components/angular-cookies/angular-cookies.js"></script>
@@ -27,54 +29,70 @@
 <!--Registration Page Related Js-->
 <script src="/views/core/userregistration/controller.userregistration.ang.js"></script>
 <script src="/views/core/userregistration/directive.useregistration.js"></script>
-<body>
-<div layout="column" >
-    <div flex="20">
+<script src="/views/core/userregistration/service.userregistration.js"></script>
+<!--Product List Controller Js-->
+<script src="/views/core/productslist/productlist.controller.js"></script>
+<script src="/views/core/productslist/productlist.directive.js"></script>
+<script src="/views/core/productslist/productlist.service.js"></script>
+
+
+
+<body layout="column">
+<md-toolbar>
         <core-Navbar></core-Navbar>
 
-    </div>
-    <div flex="60">
-        <div layout="column">
+
+<md-content>
+    <br>
+    <div layout="column" >
             <div flex="60">
-                <image-slider-comp></image-slider-comp>
                 <md-content>
+                <image-slider-comp></image-slider-comp>
+
                     <md-card>
+
                         <img style="width: auto; height: 50% " ng-src="/views/core/imageslider/4a18ffbe8c18edadb754af13d68b61d9 - Copy.jpg" class="md-card-image" alt="image caption">
                     </md-card>
 
-
+                    <div>
+                        <md-button class="md-raised md-slider-button-left"> Button </md-button>  <md-button class="md-raised md-slider-button-right"> Button </md-button>
+                    </div>
 
                 </md-content>
             </div>
-            <div flex="80" layout-margin>
+            <div flex="40" >
                 <div layout="row">
                     <div flex="20">
-                        <image-slider-comp></image-slider-comp>
                         <md-content>
+                        <image-slider-comp></image-slider-comp>
+
                             <md-card>
                                 <img style="width: auto; height: 50% " ng-src="/views/core/imageslider/4a18ffbe8c18edadb754af13d68b61d9 - Copy.jpg" class="md-card-image" alt="image caption">
                             </md-card>
                         </md-content>
                     </div>
                     <div flex="20">
-                        <image-slider-comp></image-slider-comp>
                         <md-content>
+                        <image-slider-comp></image-slider-comp>
+
                             <md-card>
                                 <img style="width: auto; height: 50% " ng-src="/views/core/imageslider/4a18ffbe8c18edadb754af13d68b61d9 - Copy.jpg" class="md-card-image" alt="image caption">
                             </md-card>
                         </md-content>
                     </div>
                     <div flex="20">
-                        <image-slider-comp></image-slider-comp>
                         <md-content>
+                        <image-slider-comp></image-slider-comp>
+
                             <md-card>
                                 <img style="width: auto; height: 50% " ng-src="/views/core/imageslider/4a18ffbe8c18edadb754af13d68b61d9 - Copy.jpg" class="md-card-image" alt="image caption">
                             </md-card>
                         </md-content>
                     </div>
                     <div flex="20">
-                        <image-slider-comp></image-slider-comp>
                         <md-content>
+                        <image-slider-comp></image-slider-comp>
+
                             <md-card>
                                 <img style="width: auto; height: 50% " ng-src="/views/core/imageslider/4a18ffbe8c18edadb754af13d68b61d9 - Copy.jpg" class="md-card-image" alt="image caption">
                             </md-card>
@@ -90,10 +108,59 @@
                     </div>
                 </div>
             </div>
+        <div flex="20" >
+            <div layout="row">
+                <div flex="20">
+                    <md-content>
+                        <image-slider-comp></image-slider-comp>
 
+                        <md-card>
+                            <img style="width: auto; height: 50% " ng-src="/views/core/imageslider/4a18ffbe8c18edadb754af13d68b61d9 - Copy.jpg" class="md-card-image" alt="image caption">
+                        </md-card>
+                    </md-content>
+                </div>
+                <div flex="20">
+                    <md-content>
+                        <image-slider-comp></image-slider-comp>
+
+                        <md-card>
+                            <img style="width: auto; height: 50% " ng-src="/views/core/imageslider/4a18ffbe8c18edadb754af13d68b61d9 - Copy.jpg" class="md-card-image" alt="image caption">
+                        </md-card>
+                    </md-content>
+                </div>
+                <div flex="20">
+                    <md-content>
+                        <image-slider-comp></image-slider-comp>
+
+                        <md-card>
+                            <img style="width: auto; height: 50% " ng-src="/views/core/imageslider/4a18ffbe8c18edadb754af13d68b61d9 - Copy.jpg" class="md-card-image" alt="image caption">
+                        </md-card>
+                    </md-content>
+                </div>
+                <div flex="20">
+                    <md-content>
+                        <image-slider-comp></image-slider-comp>
+
+                        <md-card>
+                            <img style="width: auto; height: 50% " ng-src="/views/core/imageslider/4a18ffbe8c18edadb754af13d68b61d9 - Copy.jpg" class="md-card-image" alt="image caption">
+                        </md-card>
+                    </md-content>
+                </div>
+                <div flex="20">
+                    <image-slider-comp></image-slider-comp>
+                    <md-content>
+                        <md-card>
+                            <img style="width: auto; height: 50% " ng-src="/views/core/imageslider/4a18ffbe8c18edadb754af13d68b61d9 - Copy.jpg" class="md-card-image" alt="image caption">
+                        </md-card>
+                    </md-content>
+                </div>
+            </div>
         </div>
+
     </div>
-</div>
+</md-content>
+
+</md-toolbar>
 </body>
 
 </html>

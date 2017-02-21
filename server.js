@@ -12,7 +12,7 @@ var session = require('express-session');
 var redisStore = require('connect-redis')(session);
 var client  = redis.createClient();
 var passport = require('passport');
-var flash = require('connect-flash')
+var flash = require('connect-flash');;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 /*
  * DB Configuration
@@ -59,7 +59,7 @@ app.use('/',mainroute);
 // setting port number for running server
 var port = process.env.port || 3000;
 
-// starting express server
+// starting express
 app.listen(port, function() {
     console.log("Server is running at : http://localhost: %d" , port );
 });

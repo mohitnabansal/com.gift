@@ -4,8 +4,7 @@ var Schema = mongoose.Schema;
 
 var user = new Schema({
     emailid: {
-        type: Schema.Types.Mixed,
-        unique: true,
+        type: String,
         required: true
     },
     yourname: {
@@ -16,19 +15,29 @@ var user = new Schema({
         type: String,
         required: true
     },
+    username:{
+        type:String,
+        required:true
+    },
+    dateofbirth:{
+        type:String,
+        required:true
+    },
     age:{
         type: Number,
-        required: true
+
     },
     phone_number:{
         type: Number,
-        required: true
 
     },
     address_list: {
         address: {type: String }
     },
- //   password: String,
+  password:{
+        type:String,
+        },
+
     salt: String,
     hash:String,
     createdon:{
@@ -42,6 +51,20 @@ user.methods.setPassword = function(password){
     this.hash = crypto.pbkdf2Sync(password, this.salt, 1000, 64).toString('hex');
 };
 
+user.pre('save',function(next){
+    var todaysDate = new Date();
+    console.log(todaysDate);
+    console.log(this.dateofbirth);;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+    var dobString = this.dateofbirth;
+    var dob = new Date(dobString.toString());
+    console.log(dob);
+    var age = todaysDate - dob;
+    console.log(age);;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+    this.age = age;
+    this.setPassword(this.password);;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+    this.password = "";
+    next();
+});;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 user.post('find',function(next){
     var current_Date = new Date();
@@ -57,11 +80,14 @@ user.methods.validPassword = function(password) {
 };
 
 /*var USER =  mongoose.model('USER',user);
-var userSave = new USER;
-    userSave.email = 'mohitnbansal@gmail.com',
-    userSave.name = 'Mohit',
-    userSave.password ='Chemistry',
-    userSave.setPassword(userSave.password)
+ { yourname: 'a',
+ surname: 'a',
+ dateofbirth: '"2017-02-19T18:30:00.000Z"',
+ emailid: 'a',
+ username: 'a',
+ otherModelValue: 'a',
+ password: 'a' }
+
 
 
 userSave.save(function(err){

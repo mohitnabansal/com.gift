@@ -1,6 +1,6 @@
-var app = angular.module('giftzApp'); controller: 'HeaderController',
+var app = angular.module('giftzApp');
 
-app.directive('coreNavbar', function () {
+app.directive('coreNavbar', function ($mdSticky,$compile) {
     var directiveDefinitionObject = {
         priority: 0,
         templateUrl: 'views/core/navbar/navbar.component.html',
@@ -29,7 +29,22 @@ app.directive('coreNavbar', function () {
         //  post: function postLink(scope, iElement, iAttrs, controller) { ... }
         // }
         // or
-        // link: function postLink( ... ) { ... }
+      /*  link: function(scope,element) {
+            $mdSticky(scope, element);
+        }*/
     };
     return directiveDefinitionObject;
 });
+
+app.directive('sticky', Sticky);
+
+Sticky.$inject = [ '$mdSticky' ];
+
+function Sticky($mdSticky) {
+    return {
+        //restrict : 'A',
+        link : function(scope, element) {
+            $mdSticky(scope, element);
+        }
+    }
+}
