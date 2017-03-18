@@ -23,7 +23,7 @@ module.exports = {
        response.sendFile(appDir+"/views/core/login/login.html")
        },
     loginPost: function(request,response,next){
-       console.log(request.user);;;;;;;;;;;;
+       console.log(request.user);
        if(!request.user)
        {
            response.redirect("/login");
@@ -37,9 +37,9 @@ module.exports = {
     register: function(request,response,next){
 
         var userForm = new User(request.body);
-        console.log(userForm);;;;;;;;;;;;
+        console.log(userForm);
         userForm.save(function(err) {
-            console.log(err);;;;;;;;;;;; //
+            console.log(err);//
             if(err)  {
                 return response.status(500).send(err.errmsg);
             }

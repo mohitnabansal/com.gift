@@ -22,7 +22,7 @@ app.controller('HeaderController',['navBarService','$scope','$mdDialog','$timeou
 
         // ******************************
         // Internal methods
-        // ******************************
+        // ******************************   
 
         /**
          * Search for states... use $timeout to simulate

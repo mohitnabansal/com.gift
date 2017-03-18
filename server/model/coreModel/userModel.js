@@ -54,17 +54,17 @@ user.methods.setPassword = function(password){
 user.pre('save',function(next){
     var todaysDate = new Date();
     console.log(todaysDate);
-    console.log(this.dateofbirth);;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+    console.log(this.dateofbirth);
     var dobString = this.dateofbirth;
     var dob = new Date(dobString.toString());
     console.log(dob);
     var age = todaysDate - dob;
-    console.log(age);;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+    console.log(age);
     this.age = age;
-    this.setPassword(this.password);;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+    this.setPassword(this.password);
     this.password = "";
     next();
-});;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+});
 
 user.post('find',function(next){
     var current_Date = new Date();

@@ -9,17 +9,16 @@ var path = require('path');
 var cookieParser =require('cookie-parser');
 var methodOverride = require('method-override');
 var session = require('express-session');
-var redisStore = require('connect-redis')(session);
-var client  = redis.createClient();
+//var redisStore = require('connect-redis')(session);
+//var client  = redis.createClient();
 var passport = require('passport');
-var flash = require('connect-flash');;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
+var flash = require('connect-flash');
 /*
  * DB Configuration
  *
  * */
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/giftzs');
+mongoose.connect('mongodb://127.0.0.1:27017/giftzs');
 /*EXTERNALLY MAINTAINED MODULES*/
 //var modelSave = require('./views/core/navbar/navbarCatmodel');
 require('./server/model/coreModel/userModel');
@@ -42,7 +41,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(session({secret:'supernova',
     cookie:{_expires : 600000000},
-    store: new redisStore({ host: 'localhost', port: 6379, client: client,ttl :  260}),
+   // store: new redisStore({ host: 'localhost', port: 6379, client: client,ttl :  260}),
     saveUninitialized:true ,
     resave: true
     }));
